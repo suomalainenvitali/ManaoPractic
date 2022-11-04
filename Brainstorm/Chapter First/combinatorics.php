@@ -72,9 +72,13 @@ class Combinatoric {
 }
 
 try {
-    $combinatoric = new Combinatoric("1234", 3);
+    echo "Memory get usage before:" . memory_get_usage() . "\n";
+    echo "Memory get peak usage before:" . memory_get_peak_usage() . "\n";
+    $combinatoric = new Combinatoric("12425535324", 5);
     $combinatoric->printParameters();
     $combinatoric->printPermutations();
+    echo "Memory get usage after:" . memory_get_usage() . "\n";
+    echo "Memory get peak usage after:" . memory_get_peak_usage() . "\n";
 } catch (Exception $ex) {
     print_r($ex->getMessage());
 }
